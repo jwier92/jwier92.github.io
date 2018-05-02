@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SSH Help and Such</title>
+</head>
+<body>
+  <p>If you are getting</p>
+
+  <code>
+    <pre>
+      Unable to negotiate with ww.xx.yy.zz port 22: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
+    </pre>
+  </code>
+
+  <p>make a host entry and put this in there</p>
+  <code>
+    <pre>
+  Host ASA2
+  	HostName 192.168.55.5
+  	HostKeyAlgorithms=+ssh-dss
+  	KexAlgorithms diffie-hellman-group1-sha1
+  	User admin
+    </pre>
+  </code>
+
+  <hr>
+  
+</body>
+</html>
